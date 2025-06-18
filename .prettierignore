@@ -1,0 +1,39 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Ignore lock files if preferred (optional)
+package-lock.json
+yarn.lock
+
+# Generated files
+*.min.js
+*.bundle.js
+
+# Config folders and files
+.husky/
+.vscode/
+.idea/
+
+# Git and OS junk
+.DS_Store
+Thumbs.db
+
+# Swagger/Postman
+swagger.json
+postman_collection.json
