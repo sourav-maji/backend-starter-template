@@ -18,10 +18,10 @@ A modular, production-ready Node.js backend boilerplate with JWT auth, RBAC, val
 ## Getting Started
 
 ### 1. Clone the repo
-\`\`\`bash
-git clone https://github.com/yourname/backend-starter-template.git
+```bash
+git clone 
 cd backend-starter-template
-`\`\`
+```
 
 ### 2. Install dependencies
 ```bash
@@ -53,7 +53,7 @@ docker run -p 5000:5000 backend-starter
 --- 
 
 ## Folder Structure
-\`\`\`
+```
 src/
 ├── config
 ├── controllers
@@ -63,7 +63,9 @@ src/
 ├── services
 ├── utils
 └── app.js
-\`\`\`
+```
 
-## License
-MIT
+## 🙋‍♂️ Maintainer & 👨‍💻 Author
+Sourav Maji — AI Automation Engineer & Backend Developer
+
+[**GitHub**](https://github.com/sourav-maji) | [**Linkedin**](https://www.linkedin.com/in/souravmajiwb/)
