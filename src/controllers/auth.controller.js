@@ -1,6 +1,34 @@
+import bcrypt from 'bcryptjs';
+import User from '../models/user.model.js';
 import jwt from 'jsonwebtoken';
 import ApiResponse from '../utils/ApiResponse.js';
 import AppError from '../utils/AppError.js';
+import { generateTokens } from '../services/auth.service.js';
+
+export const register = async (req, res, next) => {
+  try {
+    const { username, password, role } = req.body;
+
+    const existingUser = await User.findOne({ username });
+    if (existingUser) {
+      throw new AppError('Username already exists', 400);
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = await User.create({
+      username,
+      password: hashedPassword,
+      role: role || 'user'
+    });
+
+    const tokens = generateTokens({ id: newUser._id, username: newUser.username, role: newUser.role });
+
+    res.status(201).json(new ApiResponse(201, { user: newUser, ...tokens }, 'User registered successfully'));
+  } catch (error) {
+    next(error);
+  }
+};
 
 export const login = async (req, res, next) => {
   try {
